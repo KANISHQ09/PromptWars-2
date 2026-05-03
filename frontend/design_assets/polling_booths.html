@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CivicAssist - Polling Booths</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#e1ffec",
+                        "surface-container-low": "#f3f4f5",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "primary": "#0050cb",
+                        "surface-tint": "#0054d6",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#191c1d",
+                        "secondary": "#575e70",
+                        "surface-variant": "#e1e3e4",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#b3c5ff",
+                        "primary-container": "#0066ff",
+                        "on-secondary-fixed": "#141b2b",
+                        "surface-container": "#edeeef",
+                        "outline-variant": "#c2c6d8",
+                        "on-primary-fixed": "#001849",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed-variant": "#404758",
+                        "outline": "#727687",
+                        "secondary-fixed": "#dce2f7",
+                        "inverse-surface": "#2e3132",
+                        "secondary-fixed-dim": "#c0c6db",
+                        "primary-fixed": "#dae1ff",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "background": "#f8f9fa",
+                        "surface-dim": "#d9dadb",
+                        "surface-container-high": "#e7e8e9",
+                        "secondary-container": "#d9dff5",
+                        "on-surface-variant": "#424656",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "surface": "#f8f9fa",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#008259",
+                        "on-primary-fixed-variant": "#003fa4",
+                        "tertiary": "#006645",
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary-fixed": "#6ffbbe",
+                        "on-tertiary-fixed": "#002113",
+                        "on-primary-container": "#f8f7ff",
+                        "surface-bright": "#f8f9fa",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-surface": "#191c1d",
+                        "on-secondary-container": "#5c6274"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "max-width-content": "1280px",
+                        "unit": "8px",
+                        "padding-card": "24px",
+                        "gutter-grid": "24px",
+                        "gap-component": "16px",
+                        "margin-page": "40px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Public Sans"],
+                        "headline-lg": ["Public Sans"],
+                        "body-sm": ["Public Sans"],
+                        "headline-md": ["Public Sans"],
+                        "label-sm": ["Public Sans"],
+                        "label-md": ["Public Sans"],
+                        "body-lg": ["Public Sans"],
+                        "headline-sm": ["Public Sans"],
+                        "headline-xl": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-surface overflow-hidden">
+<!-- TopNavBar -->
+<header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-sm fixed top-0 z-50 w-full flex justify-between items-center h-16 px-6 font-['Public_Sans'] antialiased">
+<div class="flex items-center gap-4">
+<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">CivicAssist</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden sm:block">
+<input class="bg-surface-container-low border-none rounded-lg py-2 pl-10 pr-4 w-64 focus:ring-2 focus:ring-primary focus:outline-none text-body-sm" placeholder="Search resources..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-2 text-outline" data-icon="search">search</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors rounded-full relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="p-2 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors rounded-full">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary-container flex items-center justify-center text-white overflow-hidden">
+<img alt="User avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a person with a warm and approachable expression, set against a neutral, high-key studio background. The lighting is soft and even, characteristic of a modern corporate portrait. The overall aesthetic is clean and professional, aligning with a reliable civic platform's user-centric design language." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMNPV9jLQZ05rULLrcXaEoeIvbcxWZYnmNSVndcDTIHuJbcUfxqUJruGPEm_gkMwZQxJTo3IftmKDQV2l7zITClSllsVQuOFXeC3Vi2d9YGXIecCQ1fu0bV0kfPSp3hrvNpH8izUuaKLo2FaUneI74GBGT3g6E8jQymsONS9NsGpmy7hKS2RZSL2ltM_vcjD7QPUzVl5A7pKYMX-5Yx3vm5Z83sHVYTMK-gtRbieJY5_XyvxIm3wHMxDe81wFBk4N8wp7SmcAcIPI1"/>
+</div>
+</div>
+</div>
+</header>
+<div class="flex pt-16 h-screen">
+<!-- SideNavBar -->
+<aside class="bg-slate-50 dark:bg-slate-950 border-r border-slate-200 dark:border-slate-800 h-full w-64 flex flex-col p-4 gap-2 font-['Public_Sans'] text-sm font-medium">
+<div class="mb-8 px-2">
+<h2 class="text-lg font-extrabold text-blue-700 dark:text-blue-300">Civic Portal</h2>
+<p class="text-xs text-slate-500 uppercase tracking-widest font-semibold mt-1">Democratic Participation</p>
+</div>
+<nav class="flex-grow flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 rounded-lg transition-all cursor-pointer" href="#">
+<span class="material-symbols-outlined" data-icon="how_to_vote">how_to_vote</span>
+                    Election Process
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 rounded-lg transition-all cursor-pointer" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+                    Timeline
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg transition-all cursor-pointer" href="#">
+<span class="material-symbols-outlined" data-icon="location_on" style="font-variation-settings: 'FILL' 1;">location_on</span>
+                    Polling Booths
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 rounded-lg transition-all cursor-pointer" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                    Settings
+                </a>
+</nav>
+<div class="mt-auto border-t border-slate-200 dark:border-slate-800 pt-4 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-slate-900 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+                    Help Center
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-slate-900 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="policy">policy</span>
+                    Privacy
+                </a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col md:flex-row overflow-hidden relative">
+<!-- Sidebar: Booth List -->
+<div class="w-full md:w-[400px] bg-white border-r border-outline-variant flex flex-col h-full z-10 shadow-lg md:shadow-none">
+<div class="p-6 space-y-4 border-b border-outline-variant">
+<h1 class="font-headline-md text-on-surface">Polling Booths</h1>
+<div class="space-y-2">
+<label class="text-label-sm text-outline uppercase tracking-wider">Search by location</label>
+<div class="relative group">
+<input class="w-full h-12 pl-12 pr-4 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all" placeholder="Enter ZIP code or address" type="text" value="90210"/>
+<span class="material-symbols-outlined absolute left-4 top-3 text-primary" data-icon="search">search</span>
+</div>
+</div>
+</div>
+<div class="flex-grow overflow-y-auto hide-scrollbar p-4 space-y-4 bg-surface">
+<!-- Booth Card 1 -->
+<div class="bg-white p-padding-card rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border-l-4 border-tertiary transition-all hover:scale-[1.01] cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-primary">Beverly Hills Library</h3>
+<span class="bg-tertiary-container text-on-tertiary-container text-[10px] px-2 py-0.5 rounded-full font-bold">OPEN</span>
+</div>
+<p class="text-body-sm text-on-surface-variant mb-4">444 N Rexford Dr, Beverly Hills, CA 90210</p>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="flex items-center gap-2 text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="schedule">schedule</span>
+                                07:00 - 20:00
+                            </div>
+<div class="flex items-center gap-2 text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="accessible">accessible</span>
+                                Full access
+                            </div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 h-10 bg-primary text-white rounded-lg text-label-md flex items-center justify-center gap-2 hover:bg-primary-container transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-lg" data-icon="near_me">near_me</span>
+                                Navigate
+                            </button>
+<button class="h-10 px-4 border border-outline text-on-surface rounded-lg flex items-center justify-center hover:bg-surface-container transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-lg" data-icon="event">event</span>
+</button>
+</div>
+</div>
+<!-- Booth Card 2 (Active) -->
+<div class="bg-white p-padding-card rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border-l-4 border-primary transition-all hover:scale-[1.01] cursor-pointer ring-2 ring-primary/20">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-primary">Roxbury Community Center</h3>
+<span class="bg-tertiary-container text-on-tertiary-container text-[10px] px-2 py-0.5 rounded-full font-bold">OPEN</span>
+</div>
+<p class="text-body-sm text-on-surface-variant mb-4">471 S Roxbury Dr, Beverly Hills, CA 90212</p>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="flex items-center gap-2 text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="schedule">schedule</span>
+                                07:00 - 20:00
+                            </div>
+<div class="flex items-center gap-2 text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="accessible">accessible</span>
+                                Full access
+                            </div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 h-10 bg-primary text-white rounded-lg text-label-md flex items-center justify-center gap-2 hover:bg-primary-container transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-lg" data-icon="near_me">near_me</span>
+                                Navigate
+                            </button>
+<button class="h-10 px-4 border border-outline text-on-surface rounded-lg flex items-center justify-center hover:bg-surface-container transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-lg" data-icon="event">event</span>
+</button>
+</div>
+</div>
+<!-- Booth Card 3 -->
+<div class="bg-white p-padding-card rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border-l-4 border-outline transition-all hover:scale-[1.01] cursor-pointer opacity-80">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-primary">Horace Mann School</h3>
+<span class="bg-surface-container-highest text-on-surface-variant text-[10px] px-2 py-0.5 rounded-full font-bold">CLOSED</span>
+</div>
+<p class="text-body-sm text-on-surface-variant mb-4">8701 Charleville Blvd, Beverly Hills, CA 90211</p>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="flex items-center gap-2 text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-outline text-lg" data-icon="schedule">schedule</span>
+                                Opens 08:00
+                            </div>
+<div class="flex items-center gap-2 text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-outline text-lg" data-icon="accessible">accessible</span>
+                                Limited access
+                            </div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 h-10 bg-surface-container text-on-surface-variant rounded-lg text-label-md flex items-center justify-center gap-2 cursor-not-allowed">
+<span class="material-symbols-outlined text-lg" data-icon="near_me">near_me</span>
+                                Navigate
+                            </button>
+<button class="h-10 px-4 border border-outline text-on-surface rounded-lg flex items-center justify-center hover:bg-surface-container transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-lg" data-icon="event">event</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Map Area -->
+<div class="flex-grow relative bg-slate-200 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="City Map" class="w-full h-full object-cover grayscale opacity-40 mix-blend-multiply" data-alt="A high-detail top-down satellite view of a modern urban city grid, featuring clean streets, green parks, and crisp architectural lines. The map is stylized with a clean, high-key interface aesthetic, using a soft palette of whites, light grays, and Voter Blue accents for markers. The lighting is bright and architectural, evoking a sense of clarity, precision, and institutional reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpkd4ua5yZ__owXXkFdQjO1sznTBGk09MRa4bGrE6lkm75tL0cUZvj7zajQKXBSFLbxsxbyvIucfKOlHyV5RHZEQXpLwb5UnJAGbZg-4xr7jAJY_nCk14mHnXWFd2KHXMXGG_pT0IYRf2q7ww_0p6imGKPWsRNMjEgRUYfa_JEx0IkA2-LgSu2d7FExIV69QvsAMbJW3PicJwjDtqV1zGN1guNSVyicySdhoKXk7N-3ykqfqja2eNjn8EcaC1iUV1Gx-EE7lZOnLrG"/>
+<!-- Decorative Map Elements (Simulated) -->
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent"></div>
+<!-- Custom Map Markers -->
+<div class="absolute top-[30%] left-[45%] transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group">
+<div class="bg-primary text-white p-2 rounded-full shadow-lg relative z-10 transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined" data-icon="how_to_vote" style="font-variation-settings: 'FILL' 1;">how_to_vote</span>
+</div>
+<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white px-3 py-1 rounded shadow-md text-label-sm font-bold border border-primary/20">Beverly Hills Library</div>
+</div>
+<div class="absolute top-[55%] left-[55%] transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group scale-125 z-20">
+<div class="bg-primary-container text-white p-3 rounded-full shadow-2xl relative z-10 animate-pulse border-4 border-white">
+<span class="material-symbols-outlined" data-icon="location_on" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div class="absolute -bottom-10 left-1/2 -translate-x-1/2 whitespace-nowrap bg-primary text-white px-4 py-1.5 rounded-full shadow-xl text-label-md font-bold ring-4 ring-white/30">Roxbury Community Center</div>
+</div>
+<div class="absolute top-[70%] left-[30%] transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group">
+<div class="bg-outline text-white p-2 rounded-full shadow-lg relative z-10 transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined" data-icon="how_to_vote">how_to_vote</span>
+</div>
+<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white px-3 py-1 rounded shadow-md text-label-sm font-bold border border-outline/20">Horace Mann School</div>
+</div>
+</div>
+<!-- Floating Map Controls -->
+<div class="absolute bottom-8 right-8 flex flex-col gap-2">
+<button class="w-12 h-12 bg-white rounded-xl shadow-xl flex items-center justify-center text-on-surface hover:bg-surface-container transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+<button class="w-12 h-12 bg-white rounded-xl shadow-xl flex items-center justify-center text-on-surface hover:bg-surface-container transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="remove">remove</span>
+</button>
+<button class="w-12 h-12 bg-white rounded-xl shadow-xl flex items-center justify-center text-primary mt-4 hover:bg-surface-container transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="my_location">my_location</span>
+</button>
+</div>
+<!-- Layer Selector -->
+<div class="absolute top-8 right-8 flex items-center bg-white rounded-full shadow-xl px-4 py-2 gap-4 border border-outline-variant">
+<button class="flex items-center gap-2 text-label-md text-primary font-bold">
+<span class="material-symbols-outlined text-lg" data-icon="layers">layers</span>
+                        Road
+                    </button>
+<div class="h-4 w-[1px] bg-outline-variant"></div>
+<button class="flex items-center gap-2 text-label-md text-on-surface-variant hover:text-primary transition-colors">
+                        Satellite
+                    </button>
+<div class="h-4 w-[1px] bg-outline-variant"></div>
+<button class="flex items-center gap-2 text-label-md text-on-surface-variant hover:text-primary transition-colors">
+                        Traffic
+                    </button>
+</div>
+</div>
+</main>
+</div>
+<!-- Mobile Navigation Suppressed as per Task-Focused Page Logic (Full Map Experience takes priority) -->
+</body></html>
