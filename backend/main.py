@@ -8,12 +8,12 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="Indian Election Assistant API")
 
-# Add strict CORS middleware for frontend integration
+# Add CORS middleware to allow all origins for deployment
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=["*"],
     allow_credentials=True,
-    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_methods=["*"],
     allow_headers=["*"],
 )
 
@@ -70,4 +70,6 @@ async def get_candidates():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    # Use PORT environment variable if available (for Cloud Run)
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)

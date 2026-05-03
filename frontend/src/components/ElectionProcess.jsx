@@ -6,7 +6,7 @@ const ElectionProcess = () => {
   const [showVideoModal, setShowVideoModal] = useState(false)
 
   useEffect(() => {
-    fetch('http://localhost:8000/election/steps')
+    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/election/steps`)
       .then(res => res.json())
       .then(data => setSteps(data))
       .catch(err => console.error(err))

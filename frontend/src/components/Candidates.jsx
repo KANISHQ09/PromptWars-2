@@ -11,7 +11,7 @@ const Candidates = () => {
   useEffect(() => {
     if (cachedCandidates) return; // Use cache if available
 
-    fetch('http://localhost:8000/candidates')
+    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/candidates`)
       .then(res => res.json())
       .then(data => {
         cachedCandidates = data; // Set cache

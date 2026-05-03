@@ -22,7 +22,7 @@ const PollingBooths = ({ onNavigate, setContext, initialSearch, onSearchClear, u
   useEffect(() => {
     const fetchBooths = async () => {
       try {
-        const response = await fetch('http://localhost:8000/booths')
+        const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/booths`)
         const data = await response.json()
         setAllBooths(data)
         setLoading(false)

@@ -4,7 +4,7 @@ const Timeline = () => {
   const [timeline, setTimeline] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:8000/election/timeline')
+    fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/election/timeline`)
       .then(res => res.json())
       .then(data => setTimeline(data))
       .catch(err => console.error(err))
