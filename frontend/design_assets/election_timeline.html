@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Civic Portal - Important Timeline</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#e1ffec",
+                        "surface-container-low": "#f3f4f5",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "primary": "#0050cb",
+                        "surface-tint": "#0054d6",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#191c1d",
+                        "secondary": "#575e70",
+                        "surface-variant": "#e1e3e4",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#b3c5ff",
+                        "primary-container": "#0066ff",
+                        "on-secondary-fixed": "#141b2b",
+                        "surface-container": "#edeeef",
+                        "outline-variant": "#c2c6d8",
+                        "on-primary-fixed": "#001849",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed-variant": "#404758",
+                        "outline": "#727687",
+                        "secondary-fixed": "#dce2f7",
+                        "inverse-surface": "#2e3132",
+                        "secondary-fixed-dim": "#c0c6db",
+                        "primary-fixed": "#dae1ff",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "background": "#f8f9fa",
+                        "surface-dim": "#d9dadb",
+                        "surface-container-high": "#e7e8e9",
+                        "secondary-container": "#d9dff5",
+                        "on-surface-variant": "#424656",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "surface": "#f8f9fa",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#008259",
+                        "on-primary-fixed-variant": "#003fa4",
+                        "tertiary": "#006645",
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary-fixed": "#6ffbbe",
+                        "on-tertiary-fixed": "#002113",
+                        "on-primary-container": "#f8f7ff",
+                        "surface-bright": "#f8f9fa",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-surface": "#191c1d",
+                        "on-secondary-container": "#5c6274"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "max-width-content": "1280px",
+                        "unit": "8px",
+                        "padding-card": "24px",
+                        "gutter-grid": "24px",
+                        "gap-component": "16px",
+                        "margin-page": "40px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Public Sans"],
+                        "headline-lg": ["Public Sans"],
+                        "body-sm": ["Public Sans"],
+                        "headline-md": ["Public Sans"],
+                        "label-sm": ["Public Sans"],
+                        "label-md": ["Public Sans"],
+                        "body-lg": ["Public Sans"],
+                        "headline-sm": ["Public Sans"],
+                        "headline-xl": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .timeline-line {
+            width: 2px;
+            background-color: #E5E7EB;
+        }
+        .timeline-active-line {
+            width: 2px;
+            background-color: #0050cb;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-screen w-64 border-r bg-slate-50 dark:bg-slate-950 border-slate-200 dark:border-slate-800 sticky top-0">
+<div class="flex flex-col h-full p-4 gap-2">
+<div class="px-2 py-4 mb-4">
+<div class="flex items-center gap-3 mb-1">
+<div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">how_to_vote</span>
+</div>
+<span class="text-lg font-extrabold text-blue-700 dark:text-blue-300">Civic Portal</span>
+</div>
+<p class="text-xs text-slate-500 font-medium px-1">Democratic Participation</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 rounded-lg transition-all cursor-pointer" href="#">
+<span class="material-symbols-outlined">how_to_vote</span>
+<span class="font-['Public_Sans'] text-sm font-medium">Election Process</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg transition-all cursor-pointer" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<span class="font-['Public_Sans'] text-sm font-medium">Timeline</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 rounded-lg transition-all cursor-pointer" href="#">
+<span class="material-symbols-outlined">location_on</span>
+<span class="font-['Public_Sans'] text-sm font-medium">Polling Booths</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 rounded-lg transition-all cursor-pointer" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Public_Sans'] text-sm font-medium">Settings</span>
+</a>
+</nav>
+<div class="pt-4 border-t border-slate-200 dark:border-slate-800 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">contact_support</span>
+<span class="font-['Public_Sans'] text-sm font-medium">Help Center</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">policy</span>
+<span class="font-['Public_Sans'] text-sm font-medium">Privacy</span>
+</a>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col min-w-0">
+<!-- TopNavBar -->
+<header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-sm sticky top-0 z-50">
+<div class="flex justify-between items-center h-16 px-6 w-full">
+<div class="flex items-center gap-4">
+<button class="md:hidden p-2 hover:bg-slate-50 rounded-lg">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white font-headline-md">CivicAssist</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center bg-surface-container rounded-full px-4 py-2 w-64">
+<span class="material-symbols-outlined text-slate-400 mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full" placeholder="Search events..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-slate-200 ml-2">
+<img alt="User avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a person in a minimalist, bright office setting. The lighting is soft and natural, emphasizing a corporate modernist aesthetic with a focus on approachability and reliability. The color palette is clean, dominated by soft grays and white backgrounds, maintaining a sophisticated and modern user interface feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlmuiEwGubCyHzKedHGxO8IjERnjsACm9Yv7LEwMIsvMKymxShWe6C-AoxcuaBIDtJdmR-0jj95CV3IRLH4BzJmG0z1LuQ1O3SerEWn786qZQ0Wcty41XXM65OdcSMAVvz2jSMq8YxBUVACKwYmLmtXYi-f5fmTVCLZklb-AdbH70EDjAG6DXt6MA4pRCVx41mF-cikvF8n6SXPNDW8HxMWWlf2R5B5P7MKJTVKZEQBrxhWx7p2gZEiZrAmsVp7g26I5zP2CW2EK0H"/>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<div class="max-w-[1280px] mx-auto w-full p-6 md:p-10 space-y-10">
+<!-- Hero Section -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+<div>
+<nav class="flex items-center gap-2 text-sm text-slate-500 mb-4">
+<span>Civic Portal</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-primary font-medium">Important Timeline</span>
+</nav>
+<h2 class="font-headline-xl text-on-surface">Election Calendar 2024</h2>
+<p class="font-body-lg text-secondary max-w-2xl mt-2">Track the upcoming democratic milestones. Stay informed about registration deadlines, voting windows, and the final ballot count.</p>
+</div>
+<div class="bg-primary-container text-on-primary-container px-6 py-4 rounded-xl flex flex-col items-center justify-center text-center shadow-lg">
+<span class="text-xs font-label-md uppercase tracking-widest opacity-80 mb-1">Days Until Election</span>
+<span class="text-4xl font-extrabold">42</span>
+</div>
+</div>
+<!-- Timeline Container -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left: Filters & Summary -->
+<div class="lg:col-span-3 space-y-6">
+<div class="bg-white p-6 rounded-xl border border-outline-variant shadow-sm">
+<h3 class="font-headline-sm mb-4">Categories</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="font-body-md group-hover:text-primary transition-colors">Registration</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="font-body-md group-hover:text-primary transition-colors">Early Voting</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="font-body-md group-hover:text-primary transition-colors">Election Day</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="font-body-md group-hover:text-primary transition-colors">Results</span>
+</label>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary">info</span>
+<h3 class="font-label-md">Need Help?</h3>
+</div>
+<p class="text-sm text-secondary mb-4">Unsure about which deadlines apply to you? Use our eligibility checker to get a personalized timeline.</p>
+<button class="w-full py-3 bg-slate-100 hover:bg-slate-200 text-slate-900 font-medium rounded-lg transition-colors text-sm">
+                                Check Eligibility
+                            </button>
+</div>
+</div>
+<!-- Right: Vertical Timeline -->
+<div class="lg:col-span-9 space-y-12 pb-20">
+<!-- Event 1: Completed -->
+<div class="relative pl-12">
+<div class="absolute left-[7px] top-8 bottom-[-48px] timeline-active-line"></div>
+<div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-tertiary-container ring-4 ring-on-tertiary-container flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-[10px] text-white" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+<div class="flex flex-col md:flex-row gap-6 items-start">
+<div class="bg-white p-6 rounded-xl border-l-4 border-tertiary shadow-sm flex-1">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-on-tertiary-container text-tertiary text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Completed</span>
+<span class="text-sm font-medium text-slate-500">Aug 15, 2024</span>
+</div>
+<h4 class="font-headline-sm text-slate-900">Voter Registration Opening</h4>
+<p class="text-secondary mt-2 text-sm leading-relaxed">The official portal for new voter registrations opened across all districts. Online and mail-in registration options are fully operational.</p>
+<div class="mt-4 flex gap-2">
+<button class="text-primary text-xs font-bold hover:underline flex items-center gap-1">
+                                            View Details <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="hidden md:block w-48 pt-2">
+<div class="text-right">
+<p class="font-bold text-slate-900">August</p>
+<p class="text-sm text-slate-500">Week 3</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Event 2: Completed -->
+<div class="relative pl-12">
+<div class="absolute left-[7px] top-0 bottom-[-48px] timeline-active-line"></div>
+<div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-tertiary-container ring-4 ring-on-tertiary-container flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-[10px] text-white" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+<div class="flex flex-col md:flex-row gap-6 items-start">
+<div class="bg-white p-6 rounded-xl border-l-4 border-tertiary shadow-sm flex-1">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-on-tertiary-container text-tertiary text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Completed</span>
+<span class="text-sm font-medium text-slate-500">Sep 01, 2024</span>
+</div>
+<h4 class="font-headline-sm text-slate-900">Mail-in Ballot Requests Start</h4>
+<p class="text-secondary mt-2 text-sm leading-relaxed">Voters can now request their absentee ballots via the portal or at local municipal offices. Ensure your mailing address is updated.</p>
+</div>
+<div class="hidden md:block w-48 pt-2">
+<div class="text-right">
+<p class="font-bold text-slate-900">September</p>
+<p class="text-sm text-slate-500">Week 1</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Event 3: In Progress -->
+<div class="relative pl-12">
+<div class="absolute left-[7px] top-0 bottom-[-48px] timeline-line"></div>
+<div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-primary ring-4 ring-primary-fixed flex items-center justify-center z-10">
+<div class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></div>
+</div>
+<div class="flex flex-col md:flex-row gap-6 items-start">
+<div class="bg-white p-6 rounded-xl border-l-4 border-primary shadow-md flex-1 ring-2 ring-primary/5">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">In Progress</span>
+<span class="text-sm font-medium text-primary">Deadline: Oct 15</span>
+</div>
+<h4 class="font-headline-sm text-slate-900">Voter Registration Deadline</h4>
+<p class="text-secondary mt-2 text-sm leading-relaxed">This is the final window for online registration. Any applications submitted after midnight will not be eligible for the upcoming cycle.</p>
+<div class="mt-6 flex flex-col sm:flex-row gap-3">
+<button class="px-6 py-2.5 bg-primary text-white rounded-lg font-medium text-sm hover:bg-surface-tint transition-colors shadow-md shadow-primary/20">Register Now</button>
+<button class="px-6 py-2.5 border border-slate-200 text-slate-700 rounded-lg font-medium text-sm hover:bg-slate-50 transition-colors">Verify Status</button>
+</div>
+</div>
+<div class="hidden md:block w-48 pt-2">
+<div class="text-right">
+<p class="font-bold text-primary">October</p>
+<p class="text-sm text-slate-500">Current Phase</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Event 4: Upcoming -->
+<div class="relative pl-12">
+<div class="absolute left-[7px] top-0 bottom-[-48px] timeline-line"></div>
+<div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-slate-300 ring-4 ring-slate-100 flex items-center justify-center z-10"></div>
+<div class="flex flex-col md:flex-row gap-6 items-start">
+<div class="bg-white p-6 rounded-xl border-l-4 border-slate-300 shadow-sm flex-1 opacity-80">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-slate-100 text-slate-600 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Upcoming</span>
+<span class="text-sm font-medium text-slate-400">Oct 24, 2024</span>
+</div>
+<h4 class="font-headline-sm text-slate-900">Early Voting Period Begins</h4>
+<p class="text-secondary mt-2 text-sm leading-relaxed">Select polling locations will open for early ballots. Check the Polling Booths map for extended hours and location accessibility.</p>
+</div>
+<div class="hidden md:block w-48 pt-2">
+<div class="text-right">
+<p class="font-bold text-slate-400">October</p>
+<p class="text-sm text-slate-500">Week 4</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Event 5: Critical Milestone -->
+<div class="relative pl-12">
+<div class="absolute left-0 top-1 w-4 h-4 rounded-full bg-error ring-4 ring-error-container flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-[10px] text-white">star</span>
+</div>
+<div class="flex flex-col md:flex-row gap-6 items-start">
+<div class="bg-white p-8 rounded-xl border-l-4 border-error shadow-xl flex-1 relative overflow-hidden group">
+<!-- Background Pattern for critical item -->
+<div class="absolute top-0 right-0 p-4 opacity-5 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-8xl">how_to_vote</span>
+</div>
+<div class="flex justify-between items-start mb-2">
+<span class="bg-error-container text-error text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">Main Event</span>
+<span class="text-sm font-bold text-error">Nov 05, 2024</span>
+</div>
+<h4 class="font-headline-lg text-slate-900 mb-2">ELECTION DAY</h4>
+<p class="text-secondary text-base leading-relaxed mb-6">Polls open from 7:00 AM to 8:00 PM. Please bring a valid form of identification and check your designated polling place in advance.</p>
+<div class="bg-surface-container rounded-lg p-4 border border-outline-variant flex items-center gap-4">
+<span class="material-symbols-outlined text-error">notifications_active</span>
+<p class="text-xs font-medium text-slate-700">Add to calendar to receive real-time alerts for peak wait times and results.</p>
+<button class="ml-auto text-primary text-xs font-bold hover:underline whitespace-nowrap">Remind Me</button>
+</div>
+</div>
+<div class="hidden md:block w-48 pt-2">
+<div class="text-right">
+<p class="font-bold text-error">November</p>
+<p class="text-sm text-slate-500">Election Day</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Mobile Navigation -->
+<footer class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 z-50">
+<div class="flex justify-around items-center h-16">
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">how_to_vote</span>
+<span class="text-[10px] font-medium">Process</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<span class="text-[10px] font-medium">Timeline</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">location_on</span>
+<span class="text-[10px] font-medium">Booths</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</button>
+</div>
+</footer>
+</main>
+</div>
+</body></html>
