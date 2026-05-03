@@ -1,0 +1,75 @@
+{
+  "election_type": "18th Lok Sabha Elections 2024",
+  "governing_body": "Election Commission of India (ECI)",
+  "constituency": "Bhopal (Constituency No. 19)",
+  "timeline": [
+    {
+      "stage": "Announcement of Schedule",
+      "date": "March 16, 2024",
+      "description": "ECI announced the 7-phase schedule for the 18th Lok Sabha elections.",
+      "impact": "Model Code of Conduct (MCC) came into effect immediately across India."
+    },
+    {
+      "stage": "Issuance of Notification",
+      "date": "April 12, 2024",
+      "description": "Notification for Phase 3 (including Bhopal) was issued.",
+      "impact": "Officially opened the window for candidate nominations in Madhya Pradesh."
+    },
+    {
+      "stage": "Nomination Process",
+      "date": "April 12 - 19, 2024",
+      "description": "Candidates filed their nomination papers and affidavits in Bhopal.",
+      "impact": "Scrutiny occurred on April 20, and withdrawal window closed on April 22."
+    },
+    {
+      "stage": "Campaigning Period",
+      "date": "Ends May 5, 2024",
+      "description": "High-decibel campaigning by all major parties in the state capital.",
+      "impact": "Silent Period began 48 hours before polling to allow voters a quiet reflection time."
+    },
+    {
+      "stage": "Polling Day (Phase 3)",
+      "date": "May 7, 2024",
+      "description": "Bhopal citizens cast their votes using EVMs and VVPATs.",
+      "impact": "Significant turnout was recorded across Arera Colony, MP Nagar, and Old Bhopal."
+    },
+    {
+      "stage": "Counting and Results",
+      "date": "June 4, 2024",
+      "description": "Votes were counted simultaneously for all 543 constituencies.",
+      "impact": "Alok Sharma (BJP) was declared the winner from the Bhopal seat."
+    }
+  ],
+  "key_steps": [
+    {
+      "title": "Voter Registration",
+      "details": "Bhopal recorded a massive surge in first-time voters (18-19 age group) this election."
+    },
+    {
+      "title": "Model Code of Conduct",
+      "details": "Enforced strictly in MP to ensure level playing field during the 45-day campaign."
+    },
+    {
+      "title": "EVM & VVPAT",
+      "details": "100% VVPAT verification was conducted at randomly selected booths in Bhopal."
+    },
+    {
+      "title": "First-Past-The-Post",
+      "details": "Winner declared based on highest votes polled among the 22 contesting candidates."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When did Bhopal vote in 2024?",
+      "answer": "Bhopal voted in Phase 3 on May 7, 2024."
+    },
+    {
+      "question": "Who won the Bhopal Lok Sabha seat?",
+      "answer": "Alok Sharma from the Bharatiya Janata Party (BJP) won the seat."
+    },
+    {
+      "question": "What was the result date?",
+      "answer": "The results were declared on June 4, 2024."
+    }
+  ]
+}
