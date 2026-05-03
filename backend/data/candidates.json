@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Alok Sharma",
+    "party": "Bharatiya Janata Party (BJP)",
+    "partySymbol": "lotus",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Bharatiya_Janata_Party_logo.svg/200px-Bharatiya_Janata_Party_logo.svg.png",
+    "photoUrl": "https://opt.toiimg.com/recuperator/img/toi/m-108754406/108754406.jpg",
+    "age": 56,
+    "education": "Graduate",
+    "assets": "Rs. 8.9 Crores",
+    "liabilities": "Rs. 1.4 Crores",
+    "criminalCases": 0,
+    "description": "Winner of the 2024 Lok Sabha elections from Bhopal. Former Mayor of Bhopal with focus on city infrastructure and heritage."
+  },
+  {
+    "id": 2,
+    "name": "Arun Shrivastava",
+    "party": "Indian National Congress (INC)",
+    "partySymbol": "front_hand",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Indian_National_Congress_hand_logo.svg/200px-Indian_National_Congress_hand_logo.svg.png",
+    "photoUrl": "https://opt.toiimg.com/recuperator/img/toi/m-108779951/108779951.jpg",
+    "age": 62,
+    "education": "Post Graduate",
+    "assets": "Rs. 16.3 Crores",
+    "liabilities": "Rs. 85 Lakhs",
+    "criminalCases": 1,
+    "description": "Congress candidate for the 2024 elections. Veteran politician with a history of social service in Madhya Pradesh."
+  },
+  {
+    "id": 3,
+    "name": "Bhanu Pratap Singh",
+    "party": "Bahujan Samaj Party (BSP)",
+    "partySymbol": "elephant",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Elephant_Bahujan_Samaj_Party.svg/200px-Elephant_Bahujan_Samaj_Party.svg.png",
+    "photoUrl": "https://opt.toiimg.com/recuperator/img/toi/m-69274211/69274211.jpg",
+    "age": 51,
+    "education": "Graduate",
+    "assets": "Rs. 6.9 Crores",
+    "liabilities": "Rs. 25 Lakhs",
+    "criminalCases": 0,
+    "description": "Representing BSP in Bhopal, focused on dalit rights and social justice."
+  },
+  {
+    "id": 4,
+    "name": "Akshay Gothi",
+    "party": "Parivartan Party of India",
+    "partySymbol": "kettle",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Kettle_symbol.svg/200px-Kettle_symbol.svg.png",
+    "photoUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400",
+    "age": 42,
+    "education": "Graduate",
+    "assets": "Rs. 6.6 Crores",
+    "liabilities": "Rs. 10 Lakhs",
+    "criminalCases": 0,
+    "description": "Local candidate advocating for administrative reforms and youth employment."
+  },
+  {
+    "id": 5,
+    "name": "Mudit Bhatnagar",
+    "party": "SUCI-Communist",
+    "partySymbol": "kettle",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Hammer_and_sickle_red.svg/200px-Hammer_and_sickle_red.svg.png",
+    "photoUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
+    "age": 48,
+    "education": "Post Graduate",
+    "assets": "Rs. 1.2 Lakhs",
+    "liabilities": "None",
+    "criminalCases": 0,
+    "description": "Activist focusing on labor rights and public sector transparency."
+  }
+]
